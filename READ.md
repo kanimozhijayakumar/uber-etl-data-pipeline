@@ -18,9 +18,7 @@ This project simulates a real-world workflow including:
 
 ## 🏗️ Architecture
 
-<p align="center">
-  <img src="images/architecture.jpg" width="800"/>
-</p>
+![Architecture](architecture.jpg)
 
 ### 🔄 Data Flow
 
