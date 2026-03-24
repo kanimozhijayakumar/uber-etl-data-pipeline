@@ -4,12 +4,12 @@
 
 ## 📌 Project Overview
 
-This project demonstrates a complete **end-to-end data engineering pipeline** using Uber (NYC Taxi) trip data. The pipeline extracts raw data, transforms it using Python, loads it into a cloud data warehouse, and generates insights through dashboards.
+This project demonstrates a complete **end-to-end data engineering pipeline** using Uber (NYC Taxi) trip data. The pipeline extracts raw data, transforms it using Python, and loads it into a cloud data warehouse to generate insights.
 
-This project simulates a real-world data engineering workflow including:
+This project simulates a real-world workflow including:
 
 - Data Ingestion
-- Data Transformation (ETL)
+- ETL Pipeline (Extract, Transform, Load)
 - Data Modeling
 - Data Warehousing
 - Data Visualization
@@ -18,16 +18,18 @@ This project simulates a real-world data engineering workflow including:
 
 ## 🏗️ Architecture
 
-![Architecture](architecture.jpg)
+<p align="center">
+  <img src="images/architecture.jpg" width="800"/>
+</p>
 
 ### 🔄 Data Flow
 
-1. Raw data ingestion from CSV dataset
-2. Data cleaning and transformation using Python
-3. Upload to Google Cloud Storage (Data Lake)
-4. Pipeline orchestration using Mage
-5. Load transformed data into BigQuery
-6. Build dashboard using Looker Studio
+1. Ingest raw CSV dataset  
+2. Transform data using Python  
+3. Store data in Google Cloud Storage  
+4. Orchestrate pipeline using Mage  
+5. Load data into BigQuery  
+6. Build dashboard in Looker Studio  
 
 ---
 
@@ -43,44 +45,63 @@ This project simulates a real-world data engineering workflow including:
 - Looker Studio
 
 ### 🔄 Data Pipeline Tool
-- Mage AI (https://www.mage.ai/)
+- Mage AI
 
 ---
 
 ## 📊 Dataset
 
-- **Source:** NYC TLC Trip Record Data
-- Includes:
-  - Pickup & Drop-off timestamps
+- Source: NYC TLC Trip Record Data  
+- Contains:
+  - Pickup & Drop-off time
   - Location IDs
   - Trip distance
   - Fare amount
   - Payment type
-  - Passenger count
+  - Passenger count  
 
-📁 Dataset used:  
-https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project/blob/main/data/uber_data.csv
+📁 Dataset:  
+https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project/blob/main/data/uber_data.csv  
 
 📚 References:
-- https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
-- https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
+- https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page  
+- https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf  
 
 ---
 
-## 🧱 Data Modeling
+## 🧱 Data Model
 
-![Data Model](data_model.jpeg)
+<p align="center">
+  <img src="images/data_model.jpeg" width="800"/>
+</p>
 
-### ⭐ Schema Design (Star Schema)
+### ⭐ Schema Design
 
-- **Fact Table:**
-  - Trip Data
-
-- **Dimension Tables:**
-  - Date Dimension
+- Fact Table: Trip Data  
+- Dimension Tables:
+  - Date
   - Passenger Count
   - Payment Type
-  - Pickup & Drop Location
+  - Location  
+
+---
+
+## ⚙️ Installation
+
+Run the following commands:
+
+```bash
+sudo apt-get update
+sudo apt-get install python3-distutils python3-apt wget
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+
+pip3 install mage-ai pandas google-cloud google-cloud-bigquery
+```
+
+📄 Full commands:  
+👉 [Installation Guide](comment.txt)
 
 ---
 
@@ -90,15 +111,15 @@ https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project/blob
 - Load raw CSV dataset
 
 ### 🔹 Transform
-- Handle missing values
 - Remove duplicates
-- Create unique Trip ID
+- Handle missing values
+- Create Trip ID
 - Format datetime columns
 - Build dimension tables
 
 ### 🔹 Load
-- Upload data to GCP Storage
-- Load into BigQuery tables
+- Upload to GCP Storage
+- Load into BigQuery
 
 ---
 
@@ -106,12 +127,12 @@ https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project/blob
 
 Example insights:
 
-- Total trips by date
-- Revenue analysis
-- Payment type distribution
-- Peak hour demand
+- Total trips per day  
+- Revenue analysis  
+- Payment type distribution  
+- Peak hour demand  
 
-📄 SQL file:
+📄 SQL File:
 ```
 sql/analytics_query.sql
 ```
@@ -120,12 +141,12 @@ sql/analytics_query.sql
 
 ## 📊 Dashboard
 
-- Built using Looker Studio
-- Interactive visualizations:
-  - Trip trends
+- Built using Looker Studio  
+- Visualizations include:
   - Revenue trends
+  - Trip trends
   - Peak hours
-  - Payment distribution
+  - Payment distribution  
 
 ---
 
@@ -137,6 +158,10 @@ uber-data-engineering-project/
 ├── data/
 │   └── uber_data.csv
 │
+├── images/
+│   ├── architecture.jpg
+│   └── data_model.jpeg
+│
 ├── notebooks/
 │   └── Uber Data Pipeline.ipynb
 │
@@ -144,68 +169,29 @@ uber-data-engineering-project/
 │   └── analytics_query.sql
 │
 ├── mage-files/
-│
-├── architecture.jpg
-├── data_model.jpeg
+├── comment.txt
 ├── README.md
 ```
 
 ---
 
-## ▶️ How to Run the Project
-
-### 1️⃣ Clone Repository
+## ▶️ How to Run
 
 ```bash
-git clone https://github.com/kanimozhiyjayakumar/uber-data-engineering-project.git
+git clone https://github.com/your-username/uber-data-engineering-project.git
 cd uber-data-engineering-project
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
 pip install pandas numpy jupyter
-```
-
-### 3️⃣ Run Notebook
-
-```bash
 jupyter notebook
 ```
-
-### 4️⃣ Execute ETL Pipeline
-
-- Run all cells in notebook
-- Upload output to GCP
-- Load into BigQuery
 
 ---
 
 ## 🚀 Key Features
 
 ✔ End-to-End Data Pipeline  
-✔ Cloud Integration (GCP)  
+✔ Cloud Data Engineering (GCP)  
 ✔ Real-world Dataset  
 ✔ Data Modeling (Star Schema)  
 ✔ ETL Pipeline using Python  
 ✔ Dashboard Visualization  
-
----
-
-## 📌 Future Improvements
-
-- Add Apache Airflow orchestration  
-- Dockerize the pipeline  
-- Real-time streaming using Kafka  
-- CI/CD integration  
-- Data quality validation  
-
----
-
-## 🤝 Contribution
-
-Contributions are welcome!  
-Feel free to fork and improve this project.
-
----
 
