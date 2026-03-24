@@ -69,9 +69,7 @@ https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project/blob
 
 ## 🧱 Data Model
 
-<p align="center">
-  <img src="images/data_model.jpeg" width="800"/>
-</p>
+![Data Model](data_model.jpeg)
 
 ### ⭐ Schema Design
 
